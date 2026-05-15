@@ -11,20 +11,14 @@ package lab07;
  */
 
 public class Main {
-
     public static void main(String[] args) {
-
         ListaEnlazada lista = new ListaEnlazada();
-
-        // =========================
+        
         // PRUEBA LISTA VACÍA
-        // =========================
         System.out.println("Lista inicial:");
         lista.mostrar();
-
-        // =========================
+       
         // INSERCIONES
-        // =========================
         System.out.println("\nInsertando elementos...");
 
         lista.insertarInicio(10);
@@ -36,36 +30,28 @@ public class Main {
         System.out.println("Lista después de insertar:");
         lista.mostrar();
 
-        // =========================
         // ELIMINAR CABEZA
-        // =========================
         System.out.println("\nEliminando 5:");
 
         lista.eliminar(5);
 
         lista.mostrar();
 
-        // =========================
         // ELIMINAR INTERMEDIO
-        // =========================
         System.out.println("\nEliminando 20:");
 
         lista.eliminar(20);
 
         lista.mostrar();
 
-        // =========================
         // ELIMINAR NO EXISTENTE
-        // =========================
         System.out.println("\nEliminando 100:");
 
         lista.eliminar(100);
 
         lista.mostrar();
 
-        // =========================
         // ELIMINAR ÚLTIMO
-        // =========================
         System.out.println("\nEliminando 30:");
 
         lista.eliminar(30);
