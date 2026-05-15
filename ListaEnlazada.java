@@ -9,94 +9,67 @@ package lab07;
  * @author LAB-USR-AREQUIPA
  */
 public class ListaEnlazada {
-
     Nodo cabeza;
-
-    // 1 y 2. Crear lista vacía
+    //Crear lista vacía
     public ListaEnlazada() {
         cabeza = null;
     }
-
-    // 3. Insertar al inicio
+    //Insertar al inicio
     public void insertarInicio(int dato) {
-
         Nodo nuevo = new Nodo(dato);
-
         nuevo.siguiente = cabeza;
-
         cabeza = nuevo;
     }
-
-    // 3. Insertar al final
+    //Insertar al final
     public void insertarFinal(int dato) {
-
         Nodo nuevo = new Nodo(dato);
-
         if (cabeza == null) {
             cabeza = nuevo;
             return;
         }
-
         Nodo actual = cabeza;
-
         while (actual.siguiente != null) {
             actual = actual.siguiente;
         }
-
         actual.siguiente = nuevo;
     }
-
-    // 4. Eliminar un nodo
+    //Eliminar un nodo
     public void eliminar(int dato) {
-
         if (cabeza == null) {
             System.out.println("La lista está vacía");
             return;
         }
-
-        // Si el dato está en la cabeza
+        //Si el dato está en la cabeza
         if (cabeza.dato == dato) {
             cabeza = cabeza.siguiente;
             return;
         }
-
         Nodo actual = cabeza;
-
         while (actual.siguiente != null &&
                actual.siguiente.dato != dato) {
-
             actual = actual.siguiente;
         }
-
-        // Si encontró el nodo
+        //Si encontró el nodo
         if (actual.siguiente != null) {
             actual.siguiente = actual.siguiente.siguiente;
         } else {
             System.out.println("Dato no encontrado");
         }
     }
-
     // Mostrar lista
     public void mostrar() {
-
         if (cabeza == null) {
             System.out.println("Lista vacía");
             return;
         }
-
         Nodo actual = cabeza;
-
         while (actual != null) {
-
             System.out.print(actual.dato);
-
             if (actual.siguiente != null) {
                 System.out.print(" -> ");
             }
-
             actual = actual.siguiente;
         }
-
         System.out.println();
     }
 }
